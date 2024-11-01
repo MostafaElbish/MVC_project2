@@ -1,0 +1,36 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<form asp-action="Delete">
+    <div class="form-group">
+        <label asp-for="FirstName" class="col-form-label"></label>
+        <input readonly asp-for="FirstName" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="col-form-label"></label>
+        <input readonly asp-for="LastName" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="col-form-label"></label>
+        <input readonly asp-for="Email" class="form-control" />
+
+    </div>
+
+    <a asp-action="Delete" class="btn btn-primar">Delete</a>
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+</form>
+@section validation {
+
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+

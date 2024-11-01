@@ -1,0 +1,43 @@
+﻿@using Demo.BLL.Interfaces
+
+@model UserViewModel
+@inject IdepartmentResposty _departmentRepostry;
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create An Employee</h1>
+@{
+    var department =new SelectList(await _departmentRepostry.GetAll(),"Id","Name"); 
+}
+
+<form asp-controller="Employee" asp-action="Create">
+    <div class="form-group">
+        <label asp-for="FirstName" class="col-form-label"></label>
+        <input readonly asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="col-form-label"></label>
+        <input readonly asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="col-form-label"></label>
+        <input readonly asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <a asp-action="Edit" as-asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+
+    
+    <input type="submit" value="Create" class="btn btn-primary" />
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+</form>
+@section validation{
+
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script> 
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

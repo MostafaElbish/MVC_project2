@@ -1,0 +1,67 @@
+﻿@using Demo.BLL.Interfaces
+
+@model EployeeViewModel
+@inject IdepartmentResposty _departmentRepostry;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@{
+    var department = new SelectList(await _departmentRepostry.GetAll(), "Id", "Name");
+}
+
+<form asp-controller="Employee" asp-action="Edit">
+
+    <div class="form-group">
+        <label asp-for="Name" class="col-form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Age" class="col-form-label"></label>
+        <input asp-for="Age" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Salary" class="col-form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Address" class="col-form-label"></label>
+        <input asp-for="Address" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone" class="col-form-label"></label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="col-form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IsActive" class="col-form-label"></label>
+        <input asp-for="IsActive" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IsDeleted" class="col-form-label"></label>
+        <input asp-for="IsDeleted" class="form-control" />
+        <span asp-validation-for="IsDeleted" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="HirangDate" class="col-form-label"></label>
+        <input asp-for="HirangDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DateofCreation" class="col-form-label"></label>
+        <input asp-for="DateofCreation" class="form-control" />
+        <span asp-validation-for="DateofCreation" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Department" class="col-form-label"></label>
+        <select asp-for="DepartmentId" asp-items="@department"class="form-control"></select>
+
+
+    </div>
+ 
+    <input type="submit" value="Save" class="btn btn-danger" />
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-light">Back To List</a>
+</form>

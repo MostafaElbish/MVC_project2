@@ -1,0 +1,70 @@
+﻿@using Demo.DAL.Models
+@model EployeeViewModel
+@{
+    ViewData["Title"] = "Create2";
+}
+
+<h1>Details</h1>
+
+<form asp-controller="Employee" asp-action="Create">
+<div class="form-group">
+    <label asp-for="Name" class="col-form-label"></label>
+    <input readonly asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Age" class="col-form-label"></label>
+    <input readonly asp-for="Age" class="form-control" />
+    <span asp-validation-for="Age" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Salary" class="col-form-label"></label>
+    <input readonly asp-for="Salary" class="form-control" />
+    <span asp-validation-for="Salary" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Address" class="col-form-label"></label>
+    <input readonly asp-for="Address" class="form-control" />
+    <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Phone" class="col-form-label"></label>
+    <input readonly asp-for="Phone" class="form-control" />
+    <span asp-validation-for="Phone" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Email" class="col-form-label"></label>
+    <input readonly asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="IsActive" class="col-form-label"></label>
+    <input readonly asp-for="IsActive" class="form-control" />
+    <span asp-validation-for="IsActive" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="IsDeleted" class="col-form-label"></label>
+    <input readonly asp-for="IsDeleted" class="form-control" />
+    <span asp-validation-for="IsDeleted" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="HirangDate" class="col-form-label"></label>
+    <input asp-for="HirangDate" class="form-control" />
+    <span asp-validation-for="HirangDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="DateofCreation" class="col-form-label"></label>
+    <input readonly asp-for="DateofCreation" class="form-control" />
+    <span asp-validation-for="DateofCreation" class="text-danger"></span>
+
+ </div>
+<a asp-controller="Employee" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+<a asp-controller="Employee" asp-action="Index" class="btn btn-light">Back To List</a>
+<div>
+    </form>
+@section validation {
+
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

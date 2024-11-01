@@ -1,0 +1,24 @@
+﻿@using Demo.BLL.Interfaces
+
+@model RoleViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@{
+
+}
+
+<form  asp-action="Edit" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label asp-for="RoleName" class="col-form-label"></label>
+        <input asp-for="RoleName" class="form-control" />
+    </div>
+
+    <input type="submit" value="Save" class="btn btn-danger" />
+    <a asp-controller="Role" asp-action="AddOrRemove" asp-route-roleId="@Model.Id" class="btn btn-outline-success">Add or Remove</a>
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+</form>
+
